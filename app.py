@@ -4,8 +4,6 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
-# ✅ Secrets から API キーを取得して環境変数に設定
-#os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 
 from langchain_community.chat_models import ChatOpenAI
 from langchain_core.messages import SystemMessage, HumanMessage
@@ -56,5 +54,4 @@ if st.button("送信"):
             answer = get_expert_response(user_input, expert_type)
             st.markdown("### 回答:")
             st.write(answer)
-
 
