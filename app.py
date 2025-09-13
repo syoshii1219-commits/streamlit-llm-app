@@ -1,7 +1,8 @@
-from dotenv import load_dotenv
-load_dotenv()
-
 import streamlit as st
+import os
+
+os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
+
 from langchain_community.chat_models import ChatOpenAI
 from langchain_core.messages import SystemMessage, HumanMessage
 import os
