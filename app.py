@@ -1,6 +1,10 @@
 import streamlit as st
 import os
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 # ✅ Secrets から API キーを取得して環境変数に設定
 os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 
