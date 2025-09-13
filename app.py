@@ -36,4 +36,20 @@ def get_expert_response(user_input: str, expert_type: str) -> str:
 # -----------------------------------------
 # Streamlit UI
 # -----------------------------------------
-st.ti
+st.title("専門家を選択して質問する")
+
+expert_type = st.radio(
+    "専門家を選んでください：",
+    list(expert_roles.keys())
+)
+
+user_input = st.text_area("質問を入力してください：")
+
+if st.button("送信"):
+    if user_input.strip() == "":
+        st.warning("質問を入力してください。")
+    else:
+        with st.spinner("回答を生成中..."):
+            answer = get_expert_response(user_input, expert_type)
+            st.markdown("### 回答:")
+            st.write(answer)
