@@ -38,6 +38,7 @@ mypy_extensions==1.1.0
 narwhals==2.5.0
 numpy==2.3.3
 orjson==3.11.3
+oepnai==0.27.8
 packaging==24.2
 pandas==2.3.2
 pillow==11.3.0
