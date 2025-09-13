@@ -1,7 +1,18 @@
 import streamlit as st
 import os
 
+# ✅ Streamlit Cloud 用：Secretsから API キーを環境変数に設定
 os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
+
+from langchain_community.chat_models import ChatOpenAI
+from langchain_core.messages import SystemMessage, HumanMessage
+
+# 必要に応じてmodel_nameを明示的に指定（これ重要）
+llm = ChatOpenAI(
+    temperature=0,
+    model_name="gpt-3.5-turbo"  # ← GPT-4だと認証エラーになる場合あり
+)
+
 
 from langchain_community.chat_models import ChatOpenAI
 from langchain_core.messages import SystemMessage, HumanMessage
