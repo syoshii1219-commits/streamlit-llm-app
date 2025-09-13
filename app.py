@@ -8,6 +8,8 @@ from langchain_community.chat_models import ChatOpenAI
 from langchain_core.messages import SystemMessage, HumanMessage
 import os
 
+os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
+
 # 専門家ごとのシステムメッセージ
 expert_roles = {
     "医療の専門家": "あなたは優秀な医療専門家であり、健康や病気に関する質問に対して正確で丁寧な医学的助言を一般の人でもわかるように簡単に提供してください。",
